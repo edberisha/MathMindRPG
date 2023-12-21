@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Button, AppBar, Toolbar, Typography, Container } from "@mui/material";
@@ -11,6 +13,7 @@ import EditEmail from "./EditEmail";
 import Homepage from "./Homepage";
 import Title from "./Title.png";
 import Tagline from "./Tagline.png";
+import About from "./About"; // Import the About component
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,17 +50,25 @@ function App() {
   }
 
   function handleDeleteUser() {
-    fetch(`/delete/${user.id}`, {
-      method: "DELETE",
-    })
-      .then((resp) => {
-        if (resp.ok) {
-          setUser(null);
-        }
+    // Show confirmation dialog
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete your account? This action is irreversible."
+    );
+
+    // If user confirms, proceed with the deletion
+    if (isConfirmed) {
+      fetch(`/delete/${user.id}`, {
+        method: "DELETE",
       })
-      .catch((error) => {
-        console.error(error);
-      });
+        .then((resp) => {
+          if (resp.ok) {
+            setUser(null);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   }
 
   if (!user) {
@@ -85,6 +96,9 @@ function App() {
               <Button color="inherit" component={Link} to="/high-scores">
                 High Scores
               </Button>
+              <Button color="inherit" component={Link} to="/about">
+                About
+              </Button>
               <Button color="inherit" onClick={handleLogout}>
                 Logout
               </Button>
@@ -106,6 +120,9 @@ function App() {
             </Route>
             <Route path="/edit-email">
               <EditEmail user={user} setUser={setUser} />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
             <Route path="/">
               <Homepage user={user} />
