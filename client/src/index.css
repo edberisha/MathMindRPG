@@ -1,7 +1,55 @@
 :root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
+  --bg: #895f5f;
+  --header: #ab6262;
+  --link: #000000;
   --text: hsla(0, 0%, 100%, 0.88);
 }
 
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--header);
+  padding: 10px;
+}
+
+header a {
+  color: var(--link);
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+h4 {
+  color: var(--link);
+}
+
+p {
+  line-height: 1.5;
+}
+
+button {
+  background-color: var(--link);
+  color: var(--header);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #4fa3d1;
+}
+
+/* Add more styles as needed */
