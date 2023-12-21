@@ -1,10 +1,9 @@
-// Homepage.js
 import React from "react";
 import { Typography, Box } from "@mui/material";
 import Wizard from "./Wizard.png";
 import Monk from "./Monk.png";
 import Explorer from "./Explorer.png";
-import Knight from "./Knight.png"; // Import the Knight avatar
+import Knight from "./Knight.png";
 import AverageTime from "./AverageTime";
 import UniqueIntegersCount from "./UniqueIntegersCount";
 import Medal1 from "./Medal1.png";
@@ -19,7 +18,7 @@ function Homepage({ user }) {
     marginTop: "20px",
     marginLeft: "auto",
     marginRight: "auto",
-    position: "relative", // Required for stacking the border and image
+    position: "relative",
   };
 
   const borderStyle = {
@@ -29,12 +28,12 @@ function Homepage({ user }) {
     width: "100%",
     height: "100%",
     border: "2px solid black",
-    zIndex: -1, // Place the border behind the image
+    zIndex: -1,
   };
 
   const imageStyle = {
     ...avatarStyle,
-    margin: "2px", // Add margin to the image
+    margin: "2px",
   };
 
   return (
@@ -56,41 +55,25 @@ function Homepage({ user }) {
         {user.avatar === "Wizard" && (
           <div style={avatarStyle}>
             <div style={borderStyle}></div>
-            <img
-              src={Wizard}
-              alt="Wizard Avatar"
-              style={imageStyle}
-            />
+            <img src={Wizard} alt="Wizard Avatar" style={imageStyle} />
           </div>
         )}
         {user.avatar === "Monk" && (
           <div style={avatarStyle}>
             <div style={borderStyle}></div>
-            <img
-              src={Monk}
-              alt="Monk Avatar"
-              style={imageStyle}
-            />
+            <img src={Monk} alt="Monk Avatar" style={imageStyle} />
           </div>
         )}
         {user.avatar === "Explorer" && (
           <div style={avatarStyle}>
             <div style={borderStyle}></div>
-            <img
-              src={Explorer}
-              alt="Explorer Avatar"
-              style={imageStyle}
-            />
+            <img src={Explorer} alt="Explorer Avatar" style={imageStyle} />
           </div>
         )}
         {user.avatar === "Knight" && (
           <div style={avatarStyle}>
             <div style={borderStyle}></div>
-            <img
-              src={Knight}
-              alt="Knight Avatar"
-              style={imageStyle}
-            />
+            <img src={Knight} alt="Knight Avatar" style={imageStyle} />
           </div>
         )}
         <AverageTime userId={user.id} />

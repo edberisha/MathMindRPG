@@ -1,5 +1,3 @@
-// App.js
-
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Button, AppBar, Toolbar, Typography, Container } from "@mui/material";
@@ -13,7 +11,7 @@ import EditEmail from "./EditEmail";
 import Homepage from "./Homepage";
 import Title from "./Title.png";
 import Tagline from "./Tagline.png";
-import About from "./About"; // Import the About component
+import About from "./About";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -50,12 +48,10 @@ function App() {
   }
 
   function handleDeleteUser() {
-    // Show confirmation dialog
     const isConfirmed = window.confirm(
       "Are you sure you want to delete your account? This action is irreversible."
     );
 
-    // If user confirms, proceed with the deletion
     if (isConfirmed) {
       fetch(`/delete/${user.id}`, {
         method: "DELETE",

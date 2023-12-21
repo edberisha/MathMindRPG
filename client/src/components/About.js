@@ -1,4 +1,3 @@
-// About.js
 import React from "react";
 import { Typography, Box } from "@mui/material";
 import Medal1 from "./Medal1.png";
@@ -6,21 +5,31 @@ import Medal2 from "./Medal2.png";
 import Medal3 from "./Medal3.png";
 import Medal4 from "./Medal4.png";
 import AboutImage from "./AboutImage.png";
+import Wizard from "./Wizard.png";
+import Monk from "./Monk.png";
+import Explorer from "./Explorer.png";
+import Knight from "./Knight.png";
 
 const medalStyle = {
-  width: "70px", // Adjust the width as needed
-  height: "70px", // Adjust the height as needed
-  marginRight: "5px", // Optional spacing between medals
+  width: "70px",
+  height: "70px",
+  marginRight: "5px",
 };
 
 const listItemStyle = {
-  listStyleType: "none", // Remove list bullets
+  listStyleType: "none",
 };
 
 const aboutImageStyle = {
-  width: "25%", // Adjust the width as needed
-  height: "auto", // Maintain aspect ratio
+  width: "25%",
+  height: "auto",
   marginBottom: "20px",
+};
+
+const adventurerStyle = {
+  width: "70px",
+  height: "70px",
+  marginRight: "5px",
 };
 
 const About = () => {
@@ -49,26 +58,38 @@ const About = () => {
         <strong>Features:</strong>
         <ul style={listItemStyle}>
           <li>Engaging math-based challenges</li>
-          <li>Customizable characters with unique abilities</li>
-          <li>Exciting quests and storylines</li>
-          <li>Compete with friends on the high scores leaderboard</li>
+          <li>High Scores Table</li>
+          <li>Unique Character Selection Process (Unique Abilities Coming Soon...)</li>
+          <li>Medal-Accolade System</li>
         </ul>
       </Typography>
 
-      <Typography variant="body1" style={{ marginBottom: "130x" }}>
+      <Typography variant="body1" style={{ marginBottom: "20px" }}>
+        <strong>Adventurers:</strong>
+      </Typography>
+      <div style={{ marginBottom: "40px" }}>
+        <img src={Wizard} alt="Wizard Avatar" style={adventurerStyle} />
+        <img src={Monk} alt="Monk Avatar" style={adventurerStyle} />
+        <img src={Explorer} alt="Explorer Avatar" style={adventurerStyle} />
+        <img src={Knight} alt="Knight Avatar" style={adventurerStyle} />
+      </div>
+
+      <Typography variant="body1" style={{ marginBottom: "40px" }}>
         <strong>Medals:</strong>
+      </Typography>
+      <div>
         <img src={Medal1} alt="Medal 1" style={medalStyle} />
         <img src={Medal2} alt="Medal 2" style={medalStyle} />
         <img src={Medal3} alt="Medal 3" style={medalStyle} />
         <img src={Medal4} alt="Medal 4" style={medalStyle} />
-      </Typography>
+      </div>
 
       <Typography
         variant="body1"
         style={{ marginTop: "40px", marginBottom: "30px" }}
       >
         <strong>Get Started:</strong> Create an account, choose your avatar, and
-        dive into the world of Math Mind RPG. Solve problems, earn medals, and
+        dive into the world of MathQuest RPG. Solve problems, earn medals, and
         become a math master!
       </Typography>
     </Box>

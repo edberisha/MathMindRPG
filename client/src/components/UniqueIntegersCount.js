@@ -21,21 +21,19 @@ const UniqueIntegersCount = ({ userId }) => {
   }, [userId]);
 
   const medalStyle = {
-    width: "50px", // Adjust the width as needed
-    height: "50px", // Adjust the height as needed
-    marginRight: "5px", // Optional spacing between medals
+    width: "50px",
+    height: "50px",
+    marginRight: "5px",
   };
 
   return (
     <Box>
-      {/* <AverageTime userId={userId} /> */}
       {uniqueIntegersCount !== null && (
         <div>
           <p style={{ fontSize: "20px" }}>
             You have multiplied {uniqueIntegersCount}/90 unique integers!
           </p>
 
-          {/* Conditionally render medals based on uniqueIntegersCount */}
           {uniqueIntegersCount >= 70 && (
             <img src={Medal4} alt="Medal 4" style={medalStyle} />
           )}

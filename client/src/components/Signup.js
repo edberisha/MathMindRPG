@@ -64,7 +64,6 @@ function Signup({ setUser }) {
         if (resp.ok) {
           resp.json().then(({ user }) => {
             setUser(user);
-            // navigate into the site
           });
         } else {
           console.log("errors? handle them");
@@ -123,7 +122,11 @@ function Signup({ setUser }) {
           ? "User Login - Click Here"
           : "Create Your Character - Click Here"}
       </Button>
-      <form className="signup-form" onSubmit={formik.handleSubmit} style={{ maxWidth: "300px", margin: "0 auto" }}>
+      <form
+        className="signup-form"
+        onSubmit={formik.handleSubmit}
+        style={{ maxWidth: "300px", margin: "0 auto" }}
+      >
         <TextField
           id="username"
           label="Username"
